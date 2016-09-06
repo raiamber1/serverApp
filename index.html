@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title hello</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+</script>
+
+<script type="text/javascript" src="print-jquery.js"></script>
+<script>
+
+$('a').click(function(e) {
+    //e.preventDefault(); // stop the browser from following
+    window.location.href = 'http://hfdvlisweb01.vm.itg.corp.us.shldcorp.com:1181/lis_pdf/DIYLabels/DIY201608010000068.pdf';
+});
+</script>
+<a href="http://hfdvlisweb01.vm.itg.corp.us.shldcorp.com:1181/lis_pdf/DIYLabels/DIY201608010000068.pdf">Download now!</a>
+<h1>Hello</h1>
+<button type="submit" onclick="printPdf('pdfDocument')")"> print </button>
+<button id="but" type="submit"> print-jquery </button>
+<button type="submit" onclick="printpdf2('http://hfdvlisweb01.vm.itg.corp.us.shldcorp.com:1181/lis_pdf/DIYLabels/DIY201608010000068.pdf')")"> print </button>
+</body>
+</html>

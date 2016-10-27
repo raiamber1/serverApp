@@ -11,10 +11,6 @@ db.once('open', function() {
 var Userx = require('./models/user');
   var usery = new Userx();
 
-  // Set the beer properties that came from the POST data
-  //user.name = req.body.name;
-  //user.id = req.body.id;
-  //user.profession = req.body.profession;
 
   usery.name = "Manish";
   usery.id = "2";
@@ -35,12 +31,13 @@ Userx.find(function (err, usersy) {
 
 
 
-
-
-
 var fs = require("fs");
 var express = require('express');
 var app = express();
+
+
+app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', function (req, res) {
    console.log("try /listUsers");

@@ -23,9 +23,7 @@ describe('phoneDetail', function() {
     }));
 
     it('should fetch the phone details', function() {
-      jasmine.addCustomEqualityTester(angular.equals);
-
-      expect(ctrl.phone).toEqual({});
+      expect(ctrl.phone).toBeUndefined();
 
       $httpBackend.flush();
       expect(ctrl.phone).toEqual(xyzPhoneData);

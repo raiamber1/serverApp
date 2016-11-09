@@ -11,6 +11,10 @@ db.once('open', function() {
 var Userx = require('./models/user');
   var usery = new Userx();
 
+  // Set the beer properties that came from the POST data
+  //user.name = req.body.name;
+  //user.id = req.body.id;
+  //user.profession = req.body.profession;
 
   usery.name = "Manish";
   usery.id = "2";
@@ -46,6 +50,18 @@ app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
        console.log( data );
        res.end( data );
+   });
+});
+
+app.get('/loadUsers', function (req, res) {
+   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+       console.log( data );
+Userx.collection.insert(data, function(err,r) {
+  if(err) {console.log("error"+err);}
+ console.log("inserted count "+r);
+
+})
+//       res.end( data );
    });
 });
 
